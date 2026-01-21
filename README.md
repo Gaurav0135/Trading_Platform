@@ -30,12 +30,12 @@ frontend, backend, and dashboard modules.
 3. Install dependencies using `npm install`
 4. run the server with `nodemon index.js`
 5. 
-6. 
+6. add new terminal
 7. cd backend
 8. Install dependencies using `npm install`
 9. run the server with `nodemon index.js`
 
-10. 
+10. add new terminal
 11. cd dashboard
 12. Install dependencies using `npm install`
 13. run the server with `nodemon index.js`
@@ -44,8 +44,6 @@ frontend, backend, and dashboard modules.
 16. Run backend with `nodemon index.js`
 17. Start frontend with `npm start`
 
-## ⚠️ Note
-`node_modules` and `.env` files are ignored using `.gitignore`.
 
 ##  Author
 Gaurav Patel
