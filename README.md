@@ -1,8 +1,12 @@
 # Zerodha Trading Platform Clone
 
-This project is a full-stack trading platform clone inspired by Zerodha.  
-It is built using the MERN stack and structured as a monorepo containing
-frontend, backend, and dashboard modules.
+Zerodha Clone – Project Description
+
+The Zerodha Clone is a web-based stock trading platform inspired by Zerodha, designed to simulate real-time trading and portfolio management functionalities. The application provides users with an intuitive interface to explore market data, track stocks, efficiently.
+
+The platform includes user dashboard analytics, stock watchlist, order placement (buy/sell), and portfolio overview features. It focuses on delivering a clean UI, smooth navigation, and responsive design similar to a professional trading application.
+
+This project demonstrates practical implementation of frontend development, state management, and API integration concepts. It also highlights secure handling of user data and modular code structure, making it scalable for future enhancements like real-time market data, charts.
 
 ## 📁 Project Structure
 - **frontend** – User-facing application (React)
