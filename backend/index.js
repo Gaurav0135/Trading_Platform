@@ -2,21 +2,82 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const cors = require("cors");
 
+const { HoldingsModel } = require("./model/HoldingsModel");
+const { PositionsModel } = require("./model/PositionsModel");
+const { OrdersModel } = require("./model/OrdersModel");
 
-const {HoldingsModel} = require("./model/HoldingsModel");
-const {PositionsModel} = require("./model/PositionsModel");
-const {OrdersModel} = require("./model/OrdersModel")
+const app = express();
 
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
-const app = express();
-
+// ✅ Middlewares
 app.use(cors());
 app.use(bodyParser.json());
+
+// ✅ MongoDB connection
+mongoose
+  .connect(uri)
+  .then(() => {
+    console.log("DB Connected");
+  })
+  .catch((err) => {
+    console.error("DB Error:", err);
+  });
+
+// ✅ Routes
+app.get("/holdings", async (req, res) => {
+  const holdings = await HoldingsModel.find({});
+  res.json(holdings);
+});
+
+app.get("/positions", async (req, res) => {
+  const positions = await PositionsModel.find({});
+  res.json(positions);
+});
+
+app.get("/orders", async (req, res) => {
+  const orders = await OrdersModel.find({});
+  res.json(orders);
+});
+
+// ✅ SERVER START (THIS WAS MISSING)
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
+//*********************************************************************************** */
+
+// require("dotenv").config();
+
+// const express = require("express");
+// const mongoose = require("mongoose");
+// const bodyParser = require("body-parser")
+// const cors = require("cors");
+
+
+// const {HoldingsModel} = require("./model/HoldingsModel");
+// const {PositionsModel} = require("./model/PositionsModel");
+// const {OrdersModel} = require("./model/OrdersModel")
+
+// const PORT = process.env.PORT || 3002;
+// const uri = process.env.MONGO_URL;
+
+// const app = express();
+
+// app.use(cors());
+// app.use(bodyParser.json());
+
+
+
+
+
+
+//************************************************************************************** */
 
 //  **** initialize data HoldingsModel
 
